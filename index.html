@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAI+ | Watch Local Stories</title>
+    <link rel="stylesheet" href="./styles.css?v=20260413j" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="MAI+ home">
+          <span class="brand__badge">
+            <span class="brand__text">MAI</span><span class="brand__logo-plus">+</span>
+          </span>
+          <span class="brand__tagline" aria-hidden="true">
+            <span>Always local.</span>
+            <span>Always ours.</span>
+          </span>
+        </a>
+
+        <nav class="topbar__actions" aria-label="Primary">
+          <a class="nav-link nav-link--primary" href="./live.html?channel=mai-tv">Watch Live</a>
+          <a class="nav-link nav-link--ppv" href="#ppv-events">PPV</a>
+          <div class="search-panel search-panel--nav" id="search-panel">
+            <button
+              class="search-panel__toggle"
+              id="search-toggle"
+              type="button"
+              aria-label="Open search"
+              aria-expanded="false"
+              aria-controls="show-search"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <circle cx="11" cy="11" r="6.5"></circle>
+                <path d="M16 16L21 21"></path>
+              </svg>
+            </button>
+            <div class="search-panel__field">
+              <input
+                class="search-panel__input"
+                id="show-search"
+                type="search"
+                placeholder="Search news, sport, church, music or show names"
+              />
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <main class="stream-home">
+        <section class="hero">
+          <div class="hero-layout">
+            <article class="feature-panel" aria-label="Featured local content">
+              <div class="feature-panel__visual">
+                <div class="feature-panel__media" aria-hidden="true"></div>
+                <div class="feature-panel__content">
+                  <h1 class="feature-panel__title">SASR25 DAILY HIGHLIGHTS</h1>
+                  <p class="feature-panel__tease">
+                    Featured local viewing, replay highlights and full series in one place.
+                  </p>
+                  <div class="hero__buttons">
+                    <a class="button button--primary" id="featured-watch-link" href="#watch-live"
+                      >Watch Now</a
+                    >
+                    <a class="button button--secondary" href="#sections-root">Browse Shows</a>
+                  </div>
+                  <div class="feature-panel__controls">
+                    <span class="feature-panel__count" id="feature-panel-count">1 / 1</span>
+                    <div class="feature-panel__dots" id="feature-panel-dots" aria-label="Featured title slides"></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+        <div id="sections-root" aria-live="polite"></div>
+
+        <section class="footer-panel" id="site-footer">
+          <img
+            class="footer-panel__logo"
+            src="./images/MaiTV-logo-small.png"
+            alt="Mai TV"
+            loading="lazy"
+          />
+          <p class="footer-panel__copy" id="footer-panel-copy">
+            Established in 2008, Mai TV was the second free to air television station in the country.
+            Currently you can get coverage via analogue by utilizing a UHF antenna and also via Digital through Walesi.
+          </p>
+          <div class="footer-panel__socials" id="footer-social-links" aria-label="Mai TV social channels"></div>
+        </section>
+      </main>
+    </div>
+    <script src="./site-content.js"></script>
+    <script src="./data.js?v=20260413i"></script>
+    <script src="./main.js?v=20260413j"></script>
+  </body>
+</html>

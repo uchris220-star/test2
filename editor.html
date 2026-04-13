@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MAI+ | Admin Editor</title>
+    <link rel="stylesheet" href="./styles.css?v=20260413j" />
+    <link rel="stylesheet" href="./editor.css?v=20260413j" />
+  </head>
+  <body class="editor-page">
+    <div class="page-shell editor-page-shell">
+      <header class="topbar">
+        <a class="brand" href="./editor.html" aria-label="MAI+ admin home">
+          <span class="brand__badge">
+            <span class="brand__text">MAI</span><span class="brand__logo-plus">+</span>
+          </span>
+          <span class="brand__tagline" aria-hidden="true">
+            <span>Admin editor</span>
+            <span>Draft then publish</span>
+          </span>
+        </a>
+
+        <nav class="topbar__actions" aria-label="Primary">
+          <a class="nav-link" id="editor-open-site-link" href="./index.html?editorPreview=1" target="_blank" rel="noopener">Open Site</a>
+          <a class="nav-link nav-link--ppv" href="./index.html?editorPreview=1#ppv-events" target="_blank" rel="noopener">PPV</a>
+          <a class="nav-link nav-link--primary" id="editor-watch-live-link" href="./live.html?channel=mai-tv&editorPreview=1" target="_blank" rel="noopener">Watch Live</a>
+        </nav>
+      </header>
+
+      <main class="editor-layout">
+        <aside class="editor-sidebar">
+          <section class="editor-panel editor-admin__outline-panel">
+            <div class="editor-panel__header">
+              <div>
+                <p class="section-heading__eyebrow">Content map</p>
+                <h2>Sections and cards</h2>
+                <label class="editor-field editor-field--compact editor-field--search">
+                  <span class="editor-field__label">Find a section or card</span>
+                  <input
+                    class="editor-input"
+                    id="editor-search-input"
+                    type="search"
+                    placeholder="Search hero, sport, church, SASR25..."
+                  />
+                </label>
+              </div>
+            </div>
+            <div class="editor-admin__body">
+              <div id="editor-outline" class="editor-outline-section"></div>
+            </div>
+          </section>
+        </aside>
+
+        <section class="editor-preview">
+          <article class="editor-panel editor-preview__panel">
+            <div class="editor-panel__header">
+              <div>
+                <p class="section-heading__eyebrow">Draft preview</p>
+                <h2>Main page draft</h2>
+              </div>
+              <p class="editor-preview__copy">
+                Save your draft first, then use this preview before publishing live.
+              </p>
+            </div>
+            <iframe
+              id="editor-preview-frame"
+              class="editor-preview__frame"
+              title="MAI+ draft preview"
+              data-preview-src="./index.html"
+            ></iframe>
+          </article>
+        </section>
+
+        <section class="editor-workspace">
+          <section class="editor-toolbar editor-panel">
+            <div>
+              <p class="section-heading__eyebrow">Workflow</p>
+              <h2>Edit, preview, publish</h2>
+            </div>
+
+            <div class="editor-toolbar__actions">
+              <button class="button button--primary button--small" id="save-draft-button" type="button">Save Draft</button>
+              <button class="button button--secondary button--small" id="publish-button" type="button">Publish Live</button>
+              <button class="button button--secondary button--small" id="open-preview-button" type="button">Open Draft Preview</button>
+              <button class="button button--secondary button--small" id="reload-preview-button" type="button">Refresh Preview</button>
+              <button class="button button--secondary button--small" id="reset-draft-button" type="button">Reset Draft</button>
+              <button class="button button--secondary button--small" id="restore-default-button" type="button">Restore Default</button>
+              <button class="button button--secondary button--small" id="download-backup-button" type="button">Download JSON</button>
+              <button class="button button--secondary button--small" id="import-backup-button" type="button">Import JSON</button>
+            </div>
+          </section>
+
+          <section class="editor-panel editor-form-panel">
+            <div class="editor-panel__header">
+              <div>
+                <p class="section-heading__eyebrow">Editor</p>
+                <h2>Selected content</h2>
+              </div>
+            </div>
+            <div id="editor-form"></div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <input id="import-backup-input" type="file" accept="application/json,.json" hidden />
+    <input id="editor-media-browse-input" type="file" accept="video/*,image/*,.mkv,.mp4,.webm,.mov,.m3u8,.jpg,.jpeg,.png,.webp" hidden />
+    <input id="editor-media-folder-input" type="file" webkitdirectory directory multiple hidden />
+    <input
+      id="editor-schedule-upload-input"
+      type="file"
+      accept=".csv,.xlsx,text/csv,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      hidden
+    />
+
+    <script src="./site-content.js"></script>
+    <script src="./data.js?v=20260413i"></script>
+    <script src="./xlsx-reader.js?v=20260409h"></script>
+    <script src="./editor.js?v=20260413j"></script>
+  </body>
+</html>
